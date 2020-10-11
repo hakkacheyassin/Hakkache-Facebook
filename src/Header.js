@@ -25,7 +25,7 @@ function Header() {
                 <div className="header_input">
                     
                     <SearchIcon/>
-                    <input type="text"/>
+                    <input  placeholder="Search Facebook" type="text"/>
 
                 </div>
                 
@@ -34,7 +34,8 @@ function Header() {
 
             <div className="header-middle">
 
-                <div className="header-option">
+                <div className="header-option
+                header-option--active">
                     <HomeIcon fontSize="large"/>
                 </div>
 
