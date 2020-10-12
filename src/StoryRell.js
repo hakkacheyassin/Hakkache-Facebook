@@ -1,6 +1,6 @@
 import React from 'react';
 import './StoryRell.css';
-import Story from './Story'
+import Story from './Story';
 function StoryRell() {
     return (
         <div className="Story_rell">
