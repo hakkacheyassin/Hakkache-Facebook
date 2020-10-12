@@ -1,5 +1,5 @@
 import React from 'react';
-import './StoryRell.css'
+import './StoryRell.css';
 import Story from './Story'
 function StoryRell() {
     return (
