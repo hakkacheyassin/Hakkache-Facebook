@@ -1,5 +1,5 @@
 import React from 'react'
-import './Fed.css';
+import './Fed.css'
 import StoryRell from './StoryRell';
 function Fed() {
     return (
