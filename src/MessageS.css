@@ -1,6 +1,6 @@
 .MessageS {
 
-    display: flex
+    display: flex;
     margin-top: 30px
     flex-direction: column;
     background-color: white;
