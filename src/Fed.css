@@ -1,0 +1,9 @@
+.fed {
+
+    flex: 1;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
