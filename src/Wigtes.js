@@ -14,7 +14,7 @@ function Wigtes() {
           allow="encrypted-media"/>
             
         </div>
-    )
+    );
 }
 
 export default Wigtes
