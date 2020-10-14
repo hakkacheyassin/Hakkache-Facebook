@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Fed from './Fed';
+import Wigtes from './Wigtes';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <div className="app__body">
       <Sidebar/>
       <Fed/>
+      <Wigtes/>
       </div>
     </div>
   );

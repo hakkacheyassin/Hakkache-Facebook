@@ -59,7 +59,7 @@ function Header() {
 
                 <div className="header-info">
 
-                    <Avatar />
+                    <Avatar src="https://i.ibb.co/frqLLxR/B27-A302-B-F8-A4-4-A34-A9-D5-09-F9-DAD585-C5-2.jpg"/>
                     <h4>hakkacheyassin</h4>
                 </div>
 
