@@ -1,5 +1,5 @@
-import React from "react"
-import "./Wigtes.css"
+import React from "react";
+import "./Wigtes.css";
 function Wigtes() {
     return (
         <div className="Wigtes">
@@ -17,4 +17,4 @@ function Wigtes() {
     )
 }
 
-export default Wigtes
+export default Wigtes;
