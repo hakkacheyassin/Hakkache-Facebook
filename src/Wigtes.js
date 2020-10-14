@@ -1,5 +1,5 @@
 import React from "react"
-import "./Wigtes.css";
+import "./Wigtes.css"
 function Wigtes() {
     return (
         <div className="Wigtes">
