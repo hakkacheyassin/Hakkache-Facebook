@@ -17,4 +17,4 @@ function Wigtes() {
     )
 }
 
-export default Wigtes;
+export default Wigtes
