@@ -6,8 +6,12 @@ import VideocamIcon from '@material-ui/icons/Videocam';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import { Avatar } from '@material-ui/core';
+import {useStateValue} from './Stateprovider';
+
 
 function MessageS() {
+
+    const [{ user }] = useStateValue();
 
     const [input,setinput] =  useState('');
     const [imageurl,setimageurl] = useState('');
@@ -19,8 +23,7 @@ const handleSubmit = e => {
         <div className="MessageS">
 
             <div className="MessageS__top">
-                <Avatar src="https://i.ibb.co/frqLLxR/B27-A302-B-F8-A4-4-A34-A9-D5-09-F9-DAD585-C5-2.jpg"/>
-                
+            <Avatar src={user.photoURL}/>
                 <form>
                     <input 
                     value={input}

@@ -5,10 +5,13 @@ import Sidebar from './Sidebar';
 import Fed from './Fed';
 import Wigtes from './Wigtes';
 import Login from './Login';
+import {useStateValue} from './Stateprovider';
+
 
 function App() {
-const user = null;
 
+  const [{ user }, dispatch] = useStateValue()
+  
   return (
     <div className="App">
 

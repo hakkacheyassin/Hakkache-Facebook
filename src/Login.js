@@ -2,19 +2,27 @@ import { Button } from '@material-ui/core';
 import React from 'react';
 import './Login.css';
 import { auth, provider } from './firebase';
+import { actionTypes } from './reducer';
+import {useStateValue} from './Stateprovider';
 
 
 
 function Login() {
 
-const SginIn = () => {
+    const [state, dispatch] = useStateValue()
 
-    auth.signInWithPopup(provider).then(result => {
+    const SignIn = () => {
+        auth.signInWithPopup(provider)
+            .then(result => {
+                console.log(result)
 
-        console.log(result.user);
-    }).catch((error) => alert(error.message));
-};
+                dispatch({
+                    type: actionTypes.SET_USER,
+                    user: result.user
+                })
 
+            }).catch(error => alert(error.message))
+    }
     return (
         <div className="Login">
             
@@ -26,7 +34,7 @@ const SginIn = () => {
                     <img src="https://www.logo.wine/a/logo/Facebook/Facebook-Logo.wine.svg" alt="logo2"/>
             </div>  
 
-                <Button type="submit" onClick={SginIn}>
+                <Button type="submit" onClick={SignIn}>
                     Sign In
                 </Button>
         </div>
