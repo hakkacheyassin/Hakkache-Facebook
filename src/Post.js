@@ -32,7 +32,7 @@ function Post({profilesrc,username,timestamp,message,img}) {
 
             <div className="post_imag">
 
-                <img src={img} alt="logo"/>
+                <img src={img} alt=""/>
 
             </div>
 

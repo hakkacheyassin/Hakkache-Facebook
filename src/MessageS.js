@@ -7,17 +7,33 @@ import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import { Avatar } from '@material-ui/core';
 import {useStateValue} from './Stateprovider';
-
+import firebase from 'firebase';
+import db from './firebase';
 
 function MessageS() {
 
-    const [{ user }] = useStateValue();
-
+    const [{ user }, dispatch] = useStateValue();
     const [input,setinput] =  useState('');
     const [imageurl,setimageurl] = useState('');
-const handleSubmit = e => {
-    e.preventDefault();
+
+
+    const handleSubmit = e => {
+        e.preventDefault();
+
+        db.collection('Posts').add({
+            message: input,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            profilesrc:user.photoURL,
+            img:imageurl,
+            username:user.displayName,
+
+        })
+       
+
 };
+
+
+
 
     return (
         <div className="MessageS">
@@ -29,7 +45,7 @@ const handleSubmit = e => {
                     value={input}
                     onChange={e => setinput(e.target.value)}
                     className="MessageS_input"
-                   placeholder="hey"/>
+                   placeholder=""/>
                 
 
                      <input 

@@ -10,7 +10,7 @@ function Fed() {
     const [Posts, setPosts] = useState([]);
 
     useEffect(() => {
-        db.collection("Posts").onSnapshot((snapshot) =>
+        db.collection("Posts").orderBy('timestamp','desc').onSnapshot((snapshot) =>
         setPosts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data()})))
         
         );
