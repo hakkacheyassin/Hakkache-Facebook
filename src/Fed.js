@@ -1,10 +1,20 @@
-import React from 'react';
+import React ,{useEffect,useState} from 'react';
 import './Fed.css';
 import StoryRell from './StoryRell';
 import MessageS from './MessageS';
 import Post from './Post';
+import db from "./firebase";
 
 function Fed() {
+
+    const [Posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        db.collection("Posts").onSnapshot((snapshot) =>
+        setPosts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data()})))
+        
+        );
+        }, []);
 
 
 
@@ -13,24 +23,18 @@ function Fed() {
         <StoryRell/>
         <MessageS/>
 
-        <Post 
-        profilesrc="https://i.ibb.co/frqLLxR/B27-A302-B-F8-A4-4-A34-A9-D5-09-F9-DAD585-C5-2.jpg"
-        username="Hakkache"
-        timestamp="14 OCt 2020"
-        message="WoW nice Work"
-        img="https://www.inovex.de/blog/wp-content/uploads/2022/01/one-year-of-react-native.png"
+        {Posts.map((post) => (
 
-        />
-
-    <Post 
-        profilesrc="https://i.ibb.co/frqLLxR/B27-A302-B-F8-A4-4-A34-A9-D5-09-F9-DAD585-C5-2.jpg"
-        username="Hakkache"
-        timestamp="14 OCt 2020"
-        message="WoW nice Work"
-        img="https://www.inovex.de/blog/wp-content/uploads/2022/01/one-year-of-react-native.png"
-
-        />
-
+            <Post 
+                key={post.data.id}
+                profilesrc={post.data.profilesrc}
+                message={post.data.message}
+                timestamp={post.data.timestamp}
+                username={post.data.username}
+                img={post.data.img}
+            />
+        
+        ))}
         </div>
     );
 }

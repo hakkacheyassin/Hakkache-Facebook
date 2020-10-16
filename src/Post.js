@@ -1,6 +1,6 @@
-import React from "react";
-import "./Post.css";
-import { Avatar } from "@material-ui/core";
+import React from 'react';
+import './Post.css';
+import { Avatar } from '@material-ui/core';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import NearMeIcon from '@material-ui/icons/NearMe';
@@ -18,7 +18,7 @@ function Post({profilesrc,username,timestamp,message,img}) {
 
                 <div className="post_topinfo">
                     <h3>{username}</h3>
-                    <p>{timestamp}</p>
+                    <p>{new Date(timestamp?.toDate()).toUTCString()}</p>
                 </div>
              </div>   
 
